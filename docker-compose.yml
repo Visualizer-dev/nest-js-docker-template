@@ -1,0 +1,15 @@
+services:
+  api:
+    container_name: visualizer-api
+    image: visualizer-nest
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    volumes:
+      - .:/home/node
+      - /home/node/node_modules
+    command: npx nest start --watch
+    ports:
+      - 3000:3000
