@@ -1,13 +1,7 @@
-import { Logger, Module, ValidationPipe } from "@nestjs/common";
+import { AppModule } from "@/app.module";
+import { Logger, ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-
-@Module({
-  imports: [],
-  controllers: [],
-  providers: [],
-})
-class AppModule { }
 
 (async () => {
   const port = process.env.PORT || 3000;
