@@ -1,7 +1,7 @@
 services:
-  api:
-    container_name: visualizer-api
-    image: visualizer-nest
+  nestjs-api:
+    container_name: nestjs-api
+    image: nestjs-api
     restart: unless-stopped
     build:
       context: .

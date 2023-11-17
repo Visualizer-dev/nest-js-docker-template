@@ -9,7 +9,6 @@ COPY package*.json ./
 RUN npm install
 
 COPY --chown=node:node . .
-
 ##################### BUILD STAGE #####################
 FROM node:18-alpine as builder
 
@@ -22,9 +21,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY --chown=node:node . .
-RUN npm run build \
-  && npm prune --production
-
+RUN npm run build && npm prune --production
 ##################### PROD STAGE #####################
 FROM node:18-alpine
 
